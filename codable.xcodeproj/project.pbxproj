@@ -56,6 +56,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C60532C1F37F1A100598163 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9CB5ADE61F37C7FA0039ACD8 /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		9C60532D1F37F1AE00598163 /* Network Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Network Controllers";
+			sourceTree = "<group>";
+		};
+		9C60532E1F37F1BB00598163 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9C60532F1F37F1C400598163 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				9CB5ADF01F37C7FB0039ACD8 /* Info.plist */,
+				9CB5ADE81F37C7FA0039ACD8 /* Main.storyboard */,
+				9CB5ADED1F37C7FB0039ACD8 /* LaunchScreen.storyboard */,
+				9CB5ADEB1F37C7FA0039ACD8 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		9CB5ADD81F37C7FA0039ACD8 = {
 			isa = PBXGroup;
 			children = (
@@ -77,12 +110,11 @@
 		9CB5ADE31F37C7FA0039ACD8 /* codable */ = {
 			isa = PBXGroup;
 			children = (
+				9C60532E1F37F1BB00598163 /* Models */,
+				9C60532D1F37F1AE00598163 /* Network Controllers */,
+				9C60532C1F37F1A100598163 /* View Controllers */,
 				9CB5ADE41F37C7FA0039ACD8 /* AppDelegate.swift */,
-				9CB5ADE61F37C7FA0039ACD8 /* ViewController.swift */,
-				9CB5ADE81F37C7FA0039ACD8 /* Main.storyboard */,
-				9CB5ADEB1F37C7FA0039ACD8 /* Assets.xcassets */,
-				9CB5ADED1F37C7FB0039ACD8 /* LaunchScreen.storyboard */,
-				9CB5ADF01F37C7FB0039ACD8 /* Info.plist */,
+				9C60532F1F37F1C400598163 /* Assets */,
 			);
 			path = codable;
 			sourceTree = "<group>";

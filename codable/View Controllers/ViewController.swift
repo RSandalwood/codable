@@ -9,17 +9,37 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let apiManager = OraAPIManager()
+    @IBOutlet weak var loginButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func login() {
+        if !apiManager.isAuthorized() {
+            apiManager.requestAuth { [weak self] in
+                DispatchQueue.main.async {
+                    self?.loginButton.titleLabel?.text = "Logout"
+                    self?.performSegue(withIdentifier: "viewMessages", sender: nil)
+                }
+            }
+        } else {
+            apiManager.clearAuth()
+            DispatchQueue.main.async { [weak self] in
+                self?.loginButton.titleLabel?.text = "Login"
+            }
+        }
     }
-
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let nav = segue.destination as? UINavigationController,
+            let vc = nav.topViewController as? MessagesViewController,
+            segue.identifier == "viewMessages" {
+            vc.apiManager = self.apiManager
+        }
+    }
 }
 
